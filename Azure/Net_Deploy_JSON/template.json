@@ -1,0 +1,112 @@
+{
+  "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+      "routeTables_RouteTable_from_DEV_name": {
+            "defaultValue": "RouteTable_from_DEV",
+            "type": "String"
+        }
+  },
+  "resources": [
+        {
+            "comments": "Generalized from resource: '/subscriptions/32f46d3c-3227-4aa8-89cd-5325ccd592ab/resourceGroups/rgnedvtitdevarm/providers/Microsoft.Network/routeTables/RouteTable_from_DEV'.",
+            "type": "Microsoft.Network/routeTables",
+            "name": "[parameters('routeTables_RouteTable_from_DEV_name')]",
+            "apiVersion": "2016-03-30",
+            "location": "northeurope",
+            "properties": {
+                "routes": [
+                    {
+                        "name": "Route_from_DEV",
+                        "properties": {
+                            "addressPrefix": "10.30.24.0/23",
+                            "nextHopType": "VirtualAppliance",
+                            "nextHopIpAddress": "10.30.28.68"
+                        }
+                    },
+                    {
+                        "name": "Route_NET-Lan-DVT-France",
+                        "properties": {
+                            "addressPrefix": "172.16.0.0/16",
+                            "nextHopType": "VirtualAppliance",
+                            "nextHopIpAddress": "10.30.28.68"
+                        }
+                    },
+                    {
+                        "name": "Route_NET-SVD-Madrid",
+                        "properties": {
+                            "addressPrefix": "172.18.10.0/24",
+                            "nextHopType": "VirtualAppliance",
+                            "nextHopIpAddress": "10.30.28.68"
+                        }
+                    },
+                    {
+                        "name": "Route_Azure-PROD",
+                        "properties": {
+                            "addressPrefix": "10.30.16.0/22",
+                            "nextHopType": "VirtualAppliance",
+                            "nextHopIpAddress": "10.30.28.68"
+                        }
+                    },
+                    {
+                        "name": "Route_NET-Massy-DC_1",
+                        "properties": {
+                            "addressPrefix": "10.30.6.0/24",
+                            "nextHopType": "VirtualAppliance",
+                            "nextHopIpAddress": "10.30.28.68"
+                        }
+                    },
+                    {
+                        "name": "Route_NET-Fortinet-SSL-Client",
+                        "properties": {
+                            "addressPrefix": "10.30.14.0/23",
+                            "nextHopType": "VirtualAppliance",
+                            "nextHopIpAddress": "10.30.28.68"
+                        }
+                    },
+                    {
+                        "name": "Route_NET-Massy-DC_2",
+                        "properties": {
+                            "addressPrefix": "10.30.2.0/24",
+                            "nextHopType": "VirtualAppliance",
+                            "nextHopIpAddress": "10.30.28.68"
+                        }
+                    },
+                    {
+                        "name": "Route_NET-UPNow-DEV-Host",
+                        "properties": {
+                            "addressPrefix": "192.168.68.10/32",
+                            "nextHopType": "VirtualAppliance",
+                            "nextHopIpAddress": "10.30.28.68"
+                        }
+                    },
+                    {
+                        "name": "Route_NET-Aramis-1",
+                        "properties": {
+                            "addressPrefix": "141.143.80.0/24",
+                            "nextHopType": "VirtualAppliance",
+                            "nextHopIpAddress": "10.30.28.68"
+                        }
+                    },
+                    {
+                        "name": "Route_NET-Aramis-2",
+                        "properties": {
+                            "addressPrefix": "141.143.128.0/24",
+                            "nextHopType": "VirtualAppliance",
+                            "nextHopIpAddress": "10.30.28.68"
+                        }
+                    },
+                    {
+                        "name": "Route_NET-Aramis-3",
+                        "properties": {
+                            "addressPrefix": "141.143.132.0/24",
+                            "nextHopType": "VirtualAppliance",
+                            "nextHopIpAddress": "10.30.28.68"
+                        }
+                    }
+                ]
+            },
+            "dependsOn": []
+        }
+  ]
+}

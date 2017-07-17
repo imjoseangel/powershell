@@ -1,0 +1,14 @@
+{
+    "Name":  "Owner with limitations",
+    "Id":  "",
+    "IsCustom":  true,
+    "Description":  "Accounts can create all types of Resources except for classic VMS",
+    "Actions":  [  
+    "*",
+                ],
+    "NotActions":  [ "Microsoft.ClassicCompute/*"
+                   ],
+    "AssignableScopes":  [
+                             "/subscriptions/6f6eb0af-4372-42a2-a429-062b2d3ddaa9"
+                         ]
+}
