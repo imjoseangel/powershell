@@ -21,6 +21,19 @@ Configuration FileResourceDemo
     }
 }
 
+Configuration FileResourceDemo
+{             
+    Import-DscResource -ModuleName PSDesiredStateConfiguration
+     Node "OD-P-SYSMAN04"
+     {
+       File CreateFile {
+         DestinationPath = 'E:\Test.txt'
+         Ensure = "Present"
+         Contents = 'Hello World!'
+       }
+     }
+}
+
 # Compile the configuration file to a MOF format
 FileResourceDemo
 
