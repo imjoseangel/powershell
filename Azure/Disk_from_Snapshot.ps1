@@ -25,6 +25,10 @@ $location = 'westus'
 #Set the context to the subscription Id where Managed Disk will be created
 Select-AzureRmSubscription -SubscriptionId $SubscriptionId
 
+$disk = Get-AzureRmDisk -ResourceGroupName $resourceGroupName -DiskName $diskName
+$snapshot =  New-AzureRmSnapshotConfig -SourceUri $disk.Id -CreateOption Copy -Location $location
+New-AzureRmSnapshot -Snapshot $snapshot -SnapshotName $snapshotName -ResourceGroupName $resourceGroupName
+
 $snapshot = Get-AzureRmSnapshot -ResourceGroupName $resourceGroupName -SnapshotName $snapshotName 
  
 $diskConfig = New-AzureRmDiskConfig -AccountType $storageType -Location $location -CreateOption Copy -SourceResourceId $snapshot.Id
