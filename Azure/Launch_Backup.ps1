@@ -1,5 +1,6 @@
 $computers = @("computer1","computer2")
 
+Get-AzureRmRecoveryServicesVault -Name "Vault" | Set-AzureRmRecoveryServicesVaultContext
 
 foreach ($computer in $computers) {
 
