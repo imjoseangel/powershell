@@ -17,5 +17,8 @@ $command = {
     
     }
 
+$vms = Get-AzureRmVM
 
-Invoke-Command -ComputerName COMPUTER -ScriptBlock $command
+foreach ($vm in $vms) {  
+        Invoke-command -ComputerName $vm.Name -ScriptBlock $command
+    }
