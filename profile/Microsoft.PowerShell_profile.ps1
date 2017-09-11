@@ -124,7 +124,7 @@ if ($PSScriptAnalyzerMod) {
 
 # My Scripts
 
-$psdir="C:\Users\JoseMar\Documents\WindowsPowerShell\Scripts\Autoload"  
+$psdir="C:\Users\imjoseangel\Documents\WindowsPowerShell\Scripts\Autoload"  
 
 # Load all 'Autoload' scripts
 
