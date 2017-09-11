@@ -1,0 +1,1 @@
+Get-mailbox -resultsize unlimited| Get-MailboxStatistics | select displayname, lastlogontime | Export-Csv C:\UnusedMBX.csv

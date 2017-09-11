@@ -1,0 +1,1 @@
+Get-Mailbox  -RecipientTypeDetails ‘UserMailbox’ | Get-MailboxFolder –Recurse -MailFolderOnly | Get-MailboxFolderPermission | Where-Object {$_.AccessRights –notlike “Owner” –or $_.AccessRights –notlike “None”} | Format-Table Identity, FolderName, User, AccessRights –AutoSize

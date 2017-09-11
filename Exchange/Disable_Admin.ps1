@@ -1,0 +1,1 @@
+Set-CASMailbox Administrator -OWAEnabled $true -ECPEnabled $true -ActiveSyncEnabled $true -OWAforDevicesEnabled $true -EwsEnabled $true -ImapEnabled $true -PopEnabled $true
