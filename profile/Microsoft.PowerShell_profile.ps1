@@ -90,34 +90,37 @@ function prompt
     }
 }
 function pkill($name) {
-	ps $name -ErrorAction SilentlyContinue | kill
+    ps $name -ErrorAction SilentlyContinue | kill
+    
+}function motd {
+    
+    Clear-Host
+
+    $logo = Get-Content "$pwd\logo.txt" -ErrorAction SilentlyContinue
+    
+    if ($logo) {
+        Write-Output $logo   
+    }
 }
-function motd {
-
-Write-Host " "
-Write-Host "Your Logo Here"
-Write-Host " "
-
-
-}
+    
 motd{}
 
 Set-Location C:\Users\$Env:UserName\Documents\Source
 # Chocolatey profile
-$ChocolateyProfile = "$env:ChocolateyInstall\helpers\chocolateyProfile.psm1"
-if (Test-Path($ChocolateyProfile)) {
-  Import-Module "$ChocolateyProfile"
-}
+# $ChocolateyProfile = "$env:ChocolateyInstall\helpers\chocolateyProfile.psm1"
+# if (Test-Path($ChocolateyProfile)) {
+#   Import-Module "$ChocolateyProfile"
+# }
 
 $PSScriptAnalyzerMod = Get-Module -ListAvailable -name PSScriptAnalyzer
 if ($PSScriptAnalyzerMod) {
     Import-Module -Name PSScriptAnalyzer
 }
 
-$AzureRMMod = Get-Module -ListAvailable -name AzureRM
-if ($AzureRMMod) {
-    Import-Module -Name AzureRM
-}
+# $AzureRMMod = Get-Module -ListAvailable -name AzureRM
+# if ($AzureRMMod) {
+#    Import-Module -Name AzureRM
+# }
 
 # My Scripts
 
