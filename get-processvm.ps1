@@ -1,0 +1,1 @@
+Get-Process | Select-Object -Property Name, @{N="MB"; E= {$_.VM / 1gb -as [int]}} | Sort-Object -Property MB -Descending | Select-Object -First 10
