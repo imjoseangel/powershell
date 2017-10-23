@@ -1,13 +1,13 @@
 Set-AzureRmContext -SubscriptionName 'Development & Test'
 
 #Provide the subscription Id of the subscription where managed disk exists
-$sourceSubscriptionId='1bfce26d-ce7a-4197-a184-68e1289631b7'
+$sourceSubscriptionId='1bfce26d-xxx'
 
 #Provide the name of your resource group where managed disk exists
 $sourceResourceGroupName='we-s-rsg-shared'
 
 #Provide the name of the managed disk
-$managedDiskName='we-s-vm-master_OsDisk_1_cee83e2192c4454ab80ea2b202b5023e'
+$managedDiskName='we-s-vm-master_OsDisk'
 
 #Set the context to the subscription Id where Managed Disk exists
 Select-AzureRmSubscription -SubscriptionId $sourceSubscriptionId
@@ -17,7 +17,7 @@ $managedDisk= Get-AzureRMDisk -ResourceGroupName $sourceResourceGroupName -DiskN
 
 #Provide the subscription Id of the subscription where managed disk will be copied to
 #If managed disk is copied to the same subscription then you can skip this step
-$targetSubscriptionId='7ffdeabf-ea51-414f-b098-b74c3d88bc06'
+$targetSubscriptionId='7ffdeabf-xxx
 
 #Name of the resource group where snapshot will be copied to
 $targetResourceGroupName='we-s-rsg-shared'
