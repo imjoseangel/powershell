@@ -1,4 +1,6 @@
-﻿#Provide the subscription Id of the subscription where managed disk exists
+Set-AzureRmContext -SubscriptionName 'Development & Test'
+
+#Provide the subscription Id of the subscription where managed disk exists
 $sourceSubscriptionId='1bfce26d-ce7a-4197-a184-68e1289631b7'
 
 #Provide the name of your resource group where managed disk exists
